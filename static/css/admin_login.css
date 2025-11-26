@@ -1,0 +1,80 @@
+body{
+    background-color: #D3DDE6;
+}
+.admin-login-container {
+    max-width: 400px;
+    margin: 250px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+
+/* Title */
+.admin-login-container h2 {
+    margin-bottom: 25px;
+    color: #222;
+    font-size: 22px;
+}
+
+/* Labels */
+.admin-login-container label {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Inputs */
+.admin-login-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.admin-login-container input:focus {
+    border-color: #1f2933;
+}
+
+
+/* Login button */
+.admin-login-container button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    background: #1f2933;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.admin-login-container button:hover {
+    background: rgb(10, 62, 10);
+}
+
+/* Back to home link */
+.back-home {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.back-home:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Page</title>
+</head>
+<body>
+     <header>
+            <div class="header-content">
+                <!-- logo -->
+                <a href="#top"><img src="{{ url_for('static', filename='image/logo.png') }}" alt="Website Logo" class="header-logo"></a> 
+                
+               
+                
+                <div class="nav-links">
+                    <a href="/booking">Booking</a>
+                    <a href="/admin_login">Admin Page</a>
+                    <a href="/signup">Signup</a>
+                    <a href="/login">Login</a>
+                
+                    <a href="/about">About</a>
+                </div>
+                
+            </div>
+        </header>
+<div class="booking-container">
+    <h1>Hotel Booking Form</h1>
+
+    <form action="/submit_booking" method="post">
+        Name: <br>
+        <input type="text" name="name" required><br><br>
+
+        Email: <br>
+        <input type="email" name="email" required><br><br>
+
+        Phone: <br>
+        <input type="text" name="phone" required><br><br>
+
+        Check-in Date: <br>
+        <input type="date" name="checkin" required><br><br>
+
+        Check-out Date: <br>
+        <input type="date" name="checkout" required><br><br>
+
+        Room Type: <br>
+        <input type="text" name="roomtype" required><br><br>
+
+        <button type="submit">Submit Booking</button>
+    </form>
+</div>
+    <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="/aboutus">About Us</a>
+                    <a href="/contactus">Contact Us</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2023 TheAirmanHotel. All rights reserved.
+                </div>
+            </div>
+        </footer>
+        
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+</head>
+
+<body>
+
+<!-- Header -->
+<!-- <header>
+    <div class="header-content">
+        <a href="/"><img src="{{ url_for('static', filename='image/logo.png') }}" class="header-logo"></a>
+        <div class="nav-links">
+            <a href="/booking">Booking</a>
+            <a href="/user_logout">Logout</a>
+        </div>
+    </div>
+</header> -->
+<br>
+<br><br>
+<main>
+
+    <div class="dashboard-container">
+<br><br><br>
+        <h2 class="dashboard-title">Welcome, {{ user.name }}</h2>
+
+        <!-- USER INFO -->
+        <div class="dashboard-box user-info-box">
+            <h3>Your Account</h3>
+            <p><strong>User ID:</strong> {{ user.id }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+
+        <!-- BOOKINGS -->
+        <div class="dashboard-box bookings-box">
+            <h3>Your Bookings</h3>
+
+            {% if bookings %}
+                <ul class="booking-list">
+                    {% for b in bookings %}
+                        <li class="booking-item">
+                            <p><strong>Room Type:</strong> {{ b.RoomType }}</p>
+                            <p><strong>Check-in:</strong> {{ b.CheckIn }}</p>
+                            <p><strong>Check-out:</strong> {{ b.CheckOut }}</p>
+                            <p><strong>Phone:</strong> {{ b.Phone }}</p>
+                            <p><strong>Booked On:</strong> {{ b.timestamp }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>You have no bookings yet.</p>
+            {% endif %}
+        </div>
+
+    </div>
+
+</main>
+
+
+
+</body>
+</html>

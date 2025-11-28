@@ -131,6 +131,7 @@ def delete_booking(booking_id):
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
+        name = request.form.get("name")
         email = request.form.get("email")
         password = request.form.get("password")
 
@@ -144,10 +145,15 @@ def signup():
         )
 
         cursor = mydb.cursor()
-        cursor.execute(
-            "INSERT INTO users (email, password_hash) VALUES (%s, %s)",
-            (email, password_hash)
+        try: 
+            cursor.execute(
+             "INSERT INTO users (name, email, password_hash) VALUES (%s, %s, %s)",
+            (name, email, password_hash)
         )
+            
+        except mysql.connector.errors.IntegrityError:
+            return "Email already exists! Please use another email."
+        
 
         mydb.commit()
         cursor.close()
@@ -180,11 +186,45 @@ def login():
 
         if user and check_password_hash(user[0], password):
             session["user"] = email
-            return "Login Successful"
+            return redirect("/user_dashboard")
         else:
             return "Invalid Email or Password"
 
     return render_template("login.html")
+
+
+
+@app.route("/user_dashboard")
+def user_dashboard():
+    if "user" not in session:
+        return redirect("/login")
+
+    user_email = session["user"]
+
+    mydb = mysql.connector.connect(
+        host="127.0.0.1",
+        user="root",
+        password="Maninblack90",
+        database="hotel_security"
+    )
+
+    cursor = mydb.cursor(dictionary=True)
+
+    # get user info
+    cursor.execute("SELECT id, name, email FROM users WHERE email = %s", (user_email,))
+    user_info = cursor.fetchone()
+
+    # get bookings for this user
+    cursor.execute("SELECT * FROM bookings WHERE Email = %s", (user_email,))
+    bookings = cursor.fetchall()
+
+    cursor.close()
+    mydb.close()
+
+    return render_template("user_dashboard.html",
+                           user=user_info,
+                           bookings=bookings)
+
 
 #logout
 @app.route("/user_logout")

@@ -1,46 +1,79 @@
 <html>
-    <head>
     
+
+<!-- header -->
+<head>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
         <title>
-
         </title>
-    </head>
-    <body>
-            <div id="main-content">
+</head>
+
+
+<!-- whole body -->
+    <body>    
+        <div id="main-content">
        
-        <header>
+        
+        <!-- header of body -->
+            <header>
             <div class="header-content">
                 <!-- logo -->
                 <a href="#top"><img src="{{ url_for('static', filename='image/logo.png') }}" alt="Website Logo" class="header-logo"></a> 
                 
                
-                
+                <!-- nevigation bar -->
                 <div class="nav-links">
                     <a href="/booking">Booking</a>
                     <a href="/admin_login">Admin Page</a>
                     <a href="/signup">Signup</a>
                     <a href="/login">Login</a>
-                
-                    <a href="/about">About</a>
                 </div>
                 
             </div>
         </header>
 
-        
-        <main>
-           
 
+
+
+        <!-- main contain of the page except header and footer -->
+        <main>
+            
+            <!-- first slide show of image  -->
             <!-- forst container-->
             <div class="first-container">
                 <div class="first-slideshow">
                     <div class="first-slide">
-    <div class="first-overlayout"></div>
+                        <div class="first-overlayout"></div>
                         <div class="first-content">
-                            <h1>Double Room</h1>
-                            <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and a strange little girl.</p>
+                            <h1>Delux Room</h1>
+                            <p>A stylish modern room where comfort meets convenience, offering a cozy bed, elegant décor, and everything you need for a relaxing stay.
+                                <br>
+                                <br>
+                                <b>PRICE: £100 /NIGHT</b>
+                            </p>
+                            
+                        </div>
+                    </div>
+                    <div class="first-slide">
+                        <div class="first-overlayout"></div>
+                        <div class="first-content">
+                            <h1>Ececutive Suite</h1>
+                            <p>A spacious suite designed for extra comfort, featuring a separate living area, premium furnishings, and a calm environment perfect for work or rest.
+                                <br>
+                                <br>
+                                <b>PRICE: £150 /NIGHT</b>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="first-slide">
+                        <div class="first-overlayout"></div>
+                        <div class="first-content">
+                            <h1>Family Room</h1>
+                            <p>A warm and welcoming room built for families, complete with multiple beds, extra space, and amenities that make every stay feel like home.
+                                <br>
+                                <br>
+                                <b>PRICE: £200 /NIGHT</b>
+                            </p>
                             
                         </div>
                     </div>
@@ -48,98 +81,118 @@
                         <div class="first-overlayout"></div>
                         <div class="first-content">
                             <h1>Twin Room</h1>
-                            <p>When reality cracks, a quiet town spirals into chaos hidden experiments, eerie forces, and a girl with dangerous powers. What they uncover was never meant to be found.</p>
-                        </div>
-                    </div>
-                    <div class="first-slide">
-                        <div class="first-overlayout"></div>
-                        <div class="first-content">
-                            <h1>Family Room</h1>
-                            <p>After a teen girl takes her own life, a classmate receives a box of tapes revealing the heartbreaking secrets and the people she blames. Each tape uncovers a new truth, and no one is innocent.</p>
-                            
-                        </div>
-                    </div>
-                    <div class="first-slide">
-                        <div class="first-overlayout"></div>
-                        <div class="first-content">
-                            <h1>Delux Room</h1>
-                            <p>A zombie virus breaks out in a high school, trapping students in a deadly fight for survival. Friendships are tested, chaos erupts, and every hallway could be your last.</p>
+                            <p>A practical and comfortable room with two single beds, ideal for friends or colleagues traveling together while enjoying privacy and ease.
+                                <br>
+                                <br>
+                                <b>PRICE: £150 /NIGHT</b>
+                            </p>
                             
                         </div>
                     </div>
                 </div>
+
+
+
                 
-                <!-- small navigation button < > -->
+                <!-- small navigation button for container first < > -->
                 <div class="first-slider-nav">
                     <button class="slider-nav-button" id="firstPrevBtn">❮</button>
                     <button class="slider-nav-button" id="firstNextBtn">❯</button>
                 </div>
 
-                <!--dots container-->
+
+
+
+
+                <!--dots container . . . . in the first container wher user can press and go to next image -->
                 <div class="first-dots-container" id="firstDotsContainer"></div>
             </div>
 
+
+
+
+<!-- secont 3 small continers of images -->
             <!-- 3 Small containers -->
             <div class="container-3small">
                 <div class="small-categories">
-                    <!-- documenty Category -->
+
+
+                    <!-- dining Category -->
                     <div class="small-box">
-                        <img src="{{ url_for('static', filename='image/documentry.jpg') }}"  class="small-image">
-                        <div class="small-label">DOCUMENTRY</div>
+                        <img src="{{ url_for('static', filename='image/dining.jpg') }}"  class="small-image">
+                        <!-- <img src="image/dining.jpg" class="small-image"> -->
+                        <div class="small-label">DINING</div>
                     </div>
                     
-                    <!-- movie Category -->
+                    <!--services Category -->
                     <div class="small-box">
-                        <img src="{{ url_for('static', filename='image/music.jpg') }}"  class="small-image">
-                        <div class="small-label">Music <br>Album</div>
+                        <img src="{{ url_for('static', filename='image/services.jpg') }}"  class="small-image">
+                        <div class="small-label">SERVICES</div>
                     </div>
                     
-                    <!-- web-series Category -->
+                    <!-- room types Category -->
                     <div class="small-box">
-                        <img src="{{ url_for('static', filename='image/webseries.jpg') }}"  class="small-image">
-                        <div class="small-label">Web-series</div>
+                        <img src="{{ url_for('static', filename='image/roomtype.jpg') }}"  class="small-image">
+                        <div class="small-label">ROOM TYPES</div>
                     </div>
                 </div>
             </div>
 
-            <!-- second container -->
+         
+         <!-- video container also known as secont continer -->
+            <!-- second container 3 video of rooms like famil,delux and others -->
             <div class="second-slider-container">
                 <div class="second-slider">
                     <div class="second-slide">
+                        <!-- vodeo 1 -->
                         <video autoplay muted loop playsinline>
-                            
-                            <source src="{{url_for('static', filename='video/breakingbad.mov')}}" type="video/mp4">
-                            Your browser does not support HTML5 video.
+                            <source src="{{url_for('static', filename='video/delux.mp4')}}" type="video/mp4">
+                            Your browser does not support video.
                         </video>
-                        <button class="image-name">Breaking Bad</button>
-                        <div class="image-description">A high school chemistry teacher turned meth kingpin descends into the criminal underworld, transforming into one of television's most iconic anti-heroes in a gripping tale of morality, power, and survival.</div>
+                        <button class="image-name">Deluxe Room</button>
+                        <div class="image-description">A cozy escape offering modern comfort, peaceful ambience, and everything you need to unwind.</div>
                     </div>
                     <div class="second-slide">
+                        <!-- video 2 -->
                         <video autoplay muted loop playsinline>
                             
-                            <source src="{{url_for('static', filename='video/ozark.mov')}}" type="video/mp4">
-                            Your browser does not support HTML5 video.
+                            <source src="{{url_for('static', filename='video/executive.mp4')}}" type="video/mp4">
+                            Your browser does not support video.
                         </video>
-                        <button class="image-name">Ozark</button>
-                        <div class="image-description">A high school chemistry teacher turned meth kingpin descends into the criminal underworld, risking everything to secure his family's future—no matter the cost.</div>
+                        <button class="image-name">Executive Suite</button>
+                        <div class="image-description">A spacious, elegant retreat designed for extra comfort, privacy, and a touch of luxury.</div>
                     </div>
                     <div class="second-slide">
+                        <!-- video 3 -->
                         <video autoplay muted loop playsinline>
                             
-                            <source src="{{url_for('static', filename='video/eotfw.mov')}}" type="video/mp4">
-                            Your browser does not support HTML5 video.
+                            <source src="{{url_for('static', filename='video/family.mp4')}}" type="video/mp4">
+                            Your browser doens support video.
                         </video>
-                        <button class="image-name">End Of The F*ing World</button>
-                        <div class="image-description">A darkly comedic and twisted coming-of-age story about a self-proclaimed psychopath and a rebellious teen who embark on a wild, dangerous road trip that changes everything.</div>
+                        <button class="image-name">Family Room</button>
+                        <div class="image-description">A warm, welcoming space with plenty of room for everyone to relax and enjoy their stay.</div>
                     </div>
                 </div>
+
+
+
+                <!-- video sliver button to change the video -->
                 <div class="second-slider-nav">
                     <button id="secondPrevBtn">❮</button>
                     <button id="secondNextBtn">❯</button>
                 </div>
             </div>
+
+
+
+
         </main>
         
+
+
+
+
+<!-- footer are for about us an d contact us -->
         <footer>
             <div class="footer-content">
                 <div class="footer-links">
@@ -147,14 +200,17 @@
                     <a href="/contactus">Contact Us</a>
                 </div>
                 <div class="copyright">
-                    &copy; 2023 TheAirmanHotel. All rights reserved.
+                    &copy; 2023 The Airman Hotel.
                 </div>
             </div>
         </footer>
-    </div>
 
-   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-    </body>
+</div>
+
+<!-- js -->
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
 </html>
 

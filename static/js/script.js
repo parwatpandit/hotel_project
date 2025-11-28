@@ -27,11 +27,6 @@
                 dots.forEach((dot, index) => {
                     dot.classList.toggle('active', index === currentIndex);
                 });
-
-                // updare content visibility if needed
-                document.querySelectorAll('.first-content').forEach((content, index) => {
-                    content.style.opacity = index === currentIndex ? '1' : '0';
-                });
             }
 
             function goToSlide(index) {
@@ -114,8 +109,6 @@
             nextBtn.addEventListener('click', nextSlide);
             prevBtn.addEventListener('click', prevSlide);
 
-            //manage video playback on slide change
-            slider.addEventListener('transitionend', updateSlider);
 
             updateSlider(); 
             startAutoSlide(); 

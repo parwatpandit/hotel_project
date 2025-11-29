@@ -1,0 +1,44 @@
+body {
+    background-color: #D3DDE6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.error-box {
+    max-width: 420px;
+    margin: 160px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+    text-align: center;
+}
+
+.error-box h2 {
+    margin-bottom: 15px;
+    color: #8b0000;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.message {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #1f2933;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgb(10, 62, 10);
+}

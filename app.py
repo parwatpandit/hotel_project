@@ -34,14 +34,14 @@ def submit_booking():
     roomtype = request.form.get("roomtype")
 
     # if html fail for some reason and instead of error it will disply this if the user hasnt fill up in the requred place
+
     # if not name or not email or not phone or not checkin or not checkout or not roomtype:
     #     return "Please fill all of them before submitting the booking."  
 
     if not all([name,email,phone, checkin, checkout, roomtype]):
         return("please fill all of them before submiting!")
-    
-    import mysql.connector
-# can add the whole 
+ 
+# mysql connector function recalling here
     mydb = get_db()
 
     cursor = mydb.cursor() #let use wirte in database
@@ -55,7 +55,10 @@ def submit_booking():
     cursor.close() #closed the cursor
     mydb.close()
 
-    return """<h2>Booking saved successfully!</h2> <a href="/">Go to home</a><br><a href="/booking">want to book again!!!</a>"""
+    return """<h2>Booking saved successfully!</h2> 
+                <a href="/">Go to home</a>
+                <br>
+                <a href="/booking">want to book again!!!</a>"""
 
 
 # ---------------- ADMIN LOGIN ---------------- #
@@ -71,7 +74,9 @@ def admin_login():
             session["admin"] = True
             return redirect("/admin_dashboard")
         else:
-            return "Invalid username or password!"
+            return """Invalid username or password!
+                        <br>
+                        <a href="/admin_login">Try again?</a>"""
 
     return render_template("admin_login.html")
 
@@ -97,7 +102,7 @@ def admin_dashboard():
 
 @app.route("/logout")
 def logout():
-    session.pop("admin", None) # NONE prevent runtime error if the admin is not in the session
+    session.pop("admin", None) # NONE, prevent runtime error if the admin is not in the session
     return redirect("/admin_login")
 
 #admin remove booking
@@ -143,7 +148,7 @@ def signup():
         )
             
         except mysql.connector.errors.IntegrityError:
-            return "Email already exists! Please use another email."
+            return "<h3>Email already exists!</h3><a href='/signup'>Go back</a>"
         
 
         mydb.commit()
@@ -176,7 +181,8 @@ def login():
             session["user"] = email
             return redirect("/user_dashboard")
         else:
-            return "Invalid Email or Password"
+            return """<h3>Invalid Email or Password</h3>
+                        <a href="/login">go back</a>"""
 
     return render_template("login.html")
 

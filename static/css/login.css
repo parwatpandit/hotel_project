@@ -83,3 +83,20 @@ body {
 .login-box p a:hover {
     text-decoration: underline;
 }
+
+
+/* Back to home link */
+.back-home {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.back-home:hover {
+    text-decoration: underline;
+}

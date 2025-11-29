@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request, redirect, session
-
 from werkzeug.security import generate_password_hash, check_password_hash
-import mysql.connector
 
 app = Flask(__name__)
 app.secret_key = "supersecretkey123"
 
+import mysql.connector
 def get_db():
     return mysql.connector.connect(
         host="127.0.0.1",
@@ -42,13 +41,7 @@ def submit_booking():
         return("please fill all of them before submiting!")
     
     import mysql.connector
-
-    # mydb = mysql.connector.connect(
-    #     host="127.0.0.1",
-    #     user="root",
-    #     password="Maninblack90",
-    #     database="hotel_security"
-    # )
+# can add the whole 
     mydb = get_db()
 
     cursor = mydb.cursor() #let use wirte in database
@@ -88,15 +81,7 @@ def admin_login():
 def admin_dashboard():
     if "admin" not in session:
         return redirect("/admin_login")#
-
-    import mysql.connector
-
-    # mydb = mysql.connector.connect(
-    #     host="127.0.0.1",
-    #     user="root",
-    #     password="Maninblack90",
-    #     database="hotel_security"
-    # )
+# my sql connector function reccall here
     mydb = get_db()
 
 
@@ -121,14 +106,7 @@ def delete_booking(booking_id):
     if "admin" not in session:
         return redirect("/admin_login")
 
-    import mysql.connector
-
-    # mydb = mysql.connector.connect(
-    #     host="127.0.0.1",
-    #     user="root",
-    #     password="Maninblack90",
-    #     database="hotel_security"
-    # )
+# my sql connector function reccall here
     mydb = get_db()
 
 
@@ -153,12 +131,7 @@ def signup():
 
         password_hash = generate_password_hash(password, method='pbkdf2:sha256')
 
-        # mydb = mysql.connector.connect(
-        #     host="127.0.0.1",
-        #     user="root",
-        #     password="Maninblack90",
-        #     database="hotel_security"
-        # )
+# my sql connector function reccall here
         mydb = get_db()
 
 
@@ -188,12 +161,7 @@ def login():
         email = request.form.get("email")
         password = request.form.get("password")
 
-        # mydb = mysql.connector.connect(
-        #     host="127.0.0.1",
-        #     user="root",
-        #     password="Maninblack90",
-        #     database="hotel_security"
-        # )
+# my sql connector function reccall here
         mydb = get_db()
 
 
@@ -221,12 +189,7 @@ def user_dashboard():
 
     user_email = session["user"]
 
-    # mydb = mysql.connector.connect(
-    #     host="127.0.0.1",
-    #     user="root",
-    #     password="Maninblack90",
-    #     database="hotel_security"
-    # )
+# my sql connector function reccall here
     mydb = get_db()
 
 
@@ -243,10 +206,7 @@ def user_dashboard():
     cursor.close()
     mydb.close()
 
-    return render_template("user_dashboard.html",
-                           user=user_info,
-                           bookings=bookings)
-
+    return render_template("user_dashboard.html",user=user_info,bookings=bookings)
 
 #logout
 @app.route("/user_logout")

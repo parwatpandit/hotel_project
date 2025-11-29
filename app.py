@@ -74,9 +74,10 @@ def admin_login():
             session["admin"] = True
             return redirect("/admin_dashboard")
         else:
-            return """Invalid username or password!
-                        <br>
-                        <a href="/admin_login">Try again?</a>"""
+            return render_template("error.html", message="Invalid username or Password", back_url="/admin_login")
+            # return """Invalid username or password!
+            #             <br>
+            #             <a href="/admin_login">Try again?</a>"""
 
     return render_template("admin_login.html")
 
@@ -148,7 +149,8 @@ def signup():
         )
             
         except mysql.connector.errors.IntegrityError:
-            return "<h3>Email already exists!</h3><a href='/signup'>Go back</a>"
+            return render_template("error.html", message="Email already exists!!!", back_url="/signup")
+            # return "<h3>Email already exists!</h3><a href='/signup'>Go back</a>"
         
 
         mydb.commit()
@@ -181,8 +183,9 @@ def login():
             session["user"] = email
             return redirect("/user_dashboard")
         else:
-            return """<h3>Invalid Email or Password</h3>
-                        <a href="/login">go back</a>"""
+            return render_template("error.html", message="Invalid Email or Password", back_url="/login")
+            # return """<h3>Invalid Email or Password</h3>
+            #             <a href="/login">go back</a>"""
 
     return render_template("login.html")
 

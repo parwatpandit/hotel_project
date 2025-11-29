@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}">
+</head>
+
+<body>
+
+    <div class="error-box">
+
+        <h2>Error</h2>
+
+        <!-- Dynamic message -->
+        <p class="message">{{ message }}</p>
+
+        <a class="back-btn" href="{{ back_url }}">Go Back</a>
+
+    </div>
+
+</body>
+</html>

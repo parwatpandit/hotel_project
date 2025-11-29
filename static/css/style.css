@@ -399,7 +399,12 @@
             color: #888;
         }
 
-/* cookies */
+
+
+        /* not used yat so no need */
+
+/* cookies
+
 .cookie-banner {
     position: fixed;
     bottom: 20px;
@@ -443,4 +448,4 @@
 .cookie-text {
     flex-grow: 1;
     margin-right: 15px;
-}
+} */

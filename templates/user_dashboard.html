@@ -2,28 +2,33 @@
 <html>
 <head>
     <title>User Dashboard</title>
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_dashboar.css') }}">
 </head>
 
 <body>
-
-<!-- Header -->
-<!-- <header>
-    <div class="header-content">
-        <a href="/"><img src="{{ url_for('static', filename='image/logo.png') }}" class="header-logo"></a>
-        <div class="nav-links">
-            <a href="/booking">Booking</a>
-            <a href="/user_logout">Logout</a>
-        </div>
-    </div>
-</header> -->
+<header>
+            <div class="header-content">
+                <!-- logo -->
+                <a href="#top"><img src="{{ url_for('static', filename='image/logo.png') }}" alt="Website Logo" class="header-logo"></a> 
+                
+                <div class="nav-links">
+                    <a href="/booking">Booking</a>
+                    <a href="/admin_login">Admin Page</a>
+                    <a href="/signup">Signup</a>
+                    <a href="/login">Login</a>
+                
+                    <a href="/about">About</a>
+                </div>
+            
+            </div>
+        </header>
 <br>
 <br><br>
 <main>
 
     <div class="dashboard-container">
 <br><br><br>
-        <h2 class="dashboard-title">Welcome, {{ user.name }}</h2>
+        <h2 class="dashboard-title">Welcome, {{ user.name }}<h3><center><p>Be better than yesterday.</center></p></h3></h2>
 
         <!-- USER INFO -->
         <div class="dashboard-box user-info-box">
@@ -57,7 +62,19 @@
 
 </main>
 
-
+<!-- footer -->
+    <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="/aboutus">About Us</a>
+                    <a href="/contactus">Contact Us</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2023 TheAirmanHotel. All rights reserved.
+                </div>
+            </div>
+        </footer>
+        
 
 </body>
 </html>

@@ -1,24 +1,31 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
+
 <body>
-    <h2>Login</h2>
 
-    <form action="/login" method="POST">
-        <!-- Same email as used in signup -->
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+    <div class="login-box">
 
-        <!-- Password -->
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
+        <h2>Login</h2>
 
-        <button type="submit">Login</button>
-    </form>
+        <form action="/login" method="POST">
 
-    <p>Don't have an account? <a href="/signup">Sign up here</a></p>
-    <p>mango</p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p>Don't have an account? <a href="/signup">Sign up here</a></p>
+
+    </div>
+
 </body>
 </html>

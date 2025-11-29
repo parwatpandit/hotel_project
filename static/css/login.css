@@ -1,0 +1,85 @@
+/* Background */
+body {
+    background-color: #D3DDE6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Centered login card */
+.login-box {
+    max-width: 420px;
+    margin: 150px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+    text-align: center;
+}
+
+/* Title */
+.login-box h2 {
+    margin-bottom: 25px;
+    color: #222;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Labels */
+.login-box label {
+    display: block;
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Inputs */
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.login-box input:focus {
+    border-color: #1f2933;
+}
+
+/* Button */
+.login-box button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 12px;
+    background: #1f2933;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.login-box button:hover {
+    background: rgb(10, 62, 10);
+}
+
+/* Signup link */
+.login-box p {
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.login-box p a {
+    color: #1f2933;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-box p a:hover {
+    text-decoration: underline;
+}

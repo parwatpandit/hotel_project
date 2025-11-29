@@ -6,8 +6,16 @@ import mysql.connector
 app = Flask(__name__)
 app.secret_key = "supersecretkey123"
 
+def get_db():
+    return mysql.connector.connect(
+        host="127.0.0.1",
+        user="root",
+        password="Maninblack90",
+        database="hotel_security"
+    )
 
-@app.route("/")#if methods is not mention the flask will automatically use GET
+
+@app.route("/")#if methods is not mention the flask will automatically use GET method
 def home():
     return render_template("home.html")
 
@@ -27,17 +35,21 @@ def submit_booking():
     roomtype = request.form.get("roomtype")
 
     # if html fail for some reason and instead of error it will disply this if the user hasnt fill up in the requred place
-    if not name or not email or not phone or not checkin or not checkout or not roomtype:
-        return "Please fill in all fields before submitting the booking."
+    # if not name or not email or not phone or not checkin or not checkout or not roomtype:
+    #     return "Please fill all of them before submitting the booking."  
 
+    if not all([name,email,phone, checkin, checkout, roomtype]):
+        return("please fill all of them before submiting!")
+    
     import mysql.connector
 
-    mydb = mysql.connector.connect(
-        host="127.0.0.1",
-        user="root",
-        password="Maninblack90",
-        database="hotel_security"
-    )
+    # mydb = mysql.connector.connect(
+    #     host="127.0.0.1",
+    #     user="root",
+    #     password="Maninblack90",
+    #     database="hotel_security"
+    # )
+    mydb = get_db()
 
     cursor = mydb.cursor() #let use wirte in database
 
@@ -50,7 +62,7 @@ def submit_booking():
     cursor.close() #closed the cursor
     mydb.close()
 
-    return """<h2>Booking saved successfully!</h2> <a href="/">Go to home</a>"""
+    return """<h2>Booking saved successfully!</h2> <a href="/">Go to home</a><br><a href="/booking">want to book again!!!</a>"""
 
 
 # ---------------- ADMIN LOGIN ---------------- #
@@ -79,12 +91,14 @@ def admin_dashboard():
 
     import mysql.connector
 
-    mydb = mysql.connector.connect(
-        host="127.0.0.1",
-        user="root",
-        password="Maninblack90",
-        database="hotel_security"
-    )
+    # mydb = mysql.connector.connect(
+    #     host="127.0.0.1",
+    #     user="root",
+    #     password="Maninblack90",
+    #     database="hotel_security"
+    # )
+    mydb = get_db()
+
 
     cursor = mydb.cursor()
     cursor.execute("SELECT * FROM bookings")
@@ -109,12 +123,14 @@ def delete_booking(booking_id):
 
     import mysql.connector
 
-    mydb = mysql.connector.connect(
-        host="127.0.0.1",
-        user="root",
-        password="Maninblack90",
-        database="hotel_security"
-    )
+    # mydb = mysql.connector.connect(
+    #     host="127.0.0.1",
+    #     user="root",
+    #     password="Maninblack90",
+    #     database="hotel_security"
+    # )
+    mydb = get_db()
+
 
     cursor = mydb.cursor()
     cursor.execute("DELETE FROM bookings WHERE BookingID = %s", (booking_id,))
@@ -137,12 +153,14 @@ def signup():
 
         password_hash = generate_password_hash(password, method='pbkdf2:sha256')
 
-        mydb = mysql.connector.connect(
-            host="127.0.0.1",
-            user="root",
-            password="Maninblack90",
-            database="hotel_security"
-        )
+        # mydb = mysql.connector.connect(
+        #     host="127.0.0.1",
+        #     user="root",
+        #     password="Maninblack90",
+        #     database="hotel_security"
+        # )
+        mydb = get_db()
+
 
         cursor = mydb.cursor()
         try: 
@@ -170,12 +188,14 @@ def login():
         email = request.form.get("email")
         password = request.form.get("password")
 
-        mydb = mysql.connector.connect(
-            host="127.0.0.1",
-            user="root",
-            password="Maninblack90",
-            database="hotel_security"
-        )
+        # mydb = mysql.connector.connect(
+        #     host="127.0.0.1",
+        #     user="root",
+        #     password="Maninblack90",
+        #     database="hotel_security"
+        # )
+        mydb = get_db()
+
 
         cursor = mydb.cursor()
         cursor.execute("SELECT password_hash FROM users WHERE email=%s", (email,))
@@ -201,12 +221,14 @@ def user_dashboard():
 
     user_email = session["user"]
 
-    mydb = mysql.connector.connect(
-        host="127.0.0.1",
-        user="root",
-        password="Maninblack90",
-        database="hotel_security"
-    )
+    # mydb = mysql.connector.connect(
+    #     host="127.0.0.1",
+    #     user="root",
+    #     password="Maninblack90",
+    #     database="hotel_security"
+    # )
+    mydb = get_db()
+
 
     cursor = mydb.cursor(dictionary=True)
 

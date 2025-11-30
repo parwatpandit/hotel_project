@@ -1,11 +1,11 @@
 window.onload = function () {
 
-    // Room prices per night
+    // room prices per night
     const prices = {
-        "Deluxe Room": 120,
+        "Deluxe Room": 100,
         "Executive Room": 150,
-        "Family Room": 180,
-        "Twin Room": 100
+        "Family Room": 200,
+        "Twin Room": 150
     };
 
     let checkin = document.getElementById("checkin");
@@ -13,20 +13,19 @@ window.onload = function () {
     let roomtype = document.getElementById("roomtype");
     let output = document.getElementById("price-output");
 
-    // Disable checkout until check-in is selected
+    // disable check out untill checkin is filled to prevent error, other wise user were just able to chose checkout and book the room
     checkout.disabled = true;
 
-    // Stop selecting past check-in dates
+    // avoid selecting checkindate of yesterday in real world
     let today = new Date().toISOString().split("T")[0];
     checkin.min = today;
 
-    // When user selects check-in date
+    // when user select checkin the checkout is enabled 
     checkin.onchange = function () {
 
-        // Enable checkout now
         checkout.disabled = false;
 
-        // Set minimum checkout date (check-in + 1 day)
+        // checkout date choosing (check-in + 1 day)
         let nextDay = new Date(checkin.value);
         nextDay.setDate(nextDay.getDate() + 1);
         checkout.min = nextDay.toISOString().split("T")[0];
@@ -43,10 +42,10 @@ window.onload = function () {
     checkout.onchange = calculatePrice;
     roomtype.onchange = calculatePrice;
 
-    // Price calculator function
-    async function calculatePrice() {
+    // function for calculating price to display
+  function calculatePrice() {
 
-        // If any field is empty → do nothing
+        // wait intill user fill checkin , checkout, and roomtype the will display the prices
         if (!checkin.value || !checkout.value || !roomtype.value) {
             output.innerHTML = "";
             return;
@@ -56,7 +55,7 @@ window.onload = function () {
         let start = new Date(checkin.value);
         let end = new Date(checkout.value);
 
-        // Calculate nights
+        // calculate nights
         let nights = (end - start) / (1000 * 60 * 60 * 24);
 
         if (nights <= 0) {
@@ -68,7 +67,7 @@ window.onload = function () {
         let pricePerNight = prices[roomtype.value];
         let total = nights * pricePerNight;
 
-        // Show result
+        // display result
         output.innerHTML =
             "Nights: " + nights + "<br>" +
             "Price per night: £" + pricePerNight + "<br>" +

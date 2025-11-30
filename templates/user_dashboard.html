@@ -9,15 +9,13 @@
 <header>
             <div class="header-content">
                 <!-- logo -->
-                <a href="#top"><img src="{{ url_for('static', filename='image/logo.png') }}" alt="Website Logo" class="header-logo"></a> 
+                <a href="/"><img src="{{ url_for('static', filename='image/logo.png') }}" alt="Website Logo" class="header-logo"></a> 
                 
                 <div class="nav-links">
                     <a href="/booking">Booking</a>
                     <a href="/admin_login">Admin Page</a>
                     <a href="/signup">Signup</a>
                     <a href="/login">Login</a>
-                
-                    <a href="/about">About</a>
                 </div>
             
             </div>
@@ -30,14 +28,14 @@
 <br><br><br>
         <h2 class="dashboard-title">Welcome, {{ user.name }}<h3><center><p>Be better than yesterday.</center></p></h3></h2>
 
-        <!-- USER INFO -->
+        <!-- user personal info-->
         <div class="dashboard-box user-info-box">
             <h3>Your Account</h3>
             <p><strong>User ID:</strong> {{ user.id }}</p>
             <p><strong>Email:</strong> {{ user.email }}</p>
         </div>
 
-        <!-- BOOKING -->
+        <!--his or her bookings-->
         <div class="dashboard-box bookings-box">
             <h3>Your Bookings</h3>
 
@@ -62,7 +60,7 @@
 
 </main>
 
-<!-- footer -->
+<!-- footers -->
     <footer>
             <div class="footer-content">
                 <div class="footer-links">

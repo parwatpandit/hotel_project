@@ -1,81 +1,61 @@
-/* header open */
-     
-
-        /* navigation bar*/
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color:#D3DDE6 ;
-            padding: 15px 20px;
-            /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
-            z-index: 100;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-        }
-
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color:#D3DDE6;
+    padding: 15px 20px;
+    z-index: 100;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
 
 .header-content {
-            display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     position: relative;
-          
-        }
+}
 
-        /* website logo sytle */
-    
-        .header-logo {
+.header-logo {
     height: 50px;
     margin-right: 200px;
     position: absolute;
-    left: 20px; 
-    top: 0px; 
+    left: 20px;
+    top: 0px;
 }
 
-        /* link  */
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            align-items: center; 
-            gap: 25px;
-            padding-top: 18px;
-        }
+ .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding-top: 18px;
+}
 
-        .nav-links a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-            /* margin: 0 15px; */
-            position: relative;
-            font-size: 18px;
-        }
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+}
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: black;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: width 0.3s ease-in-out;
-        }
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+.nav-links a:hover::after {
+    width: 100%;
+}
 
-
-/* heaser close */
-
-
-
-
-
-
-/* Background */
 body {
     background-color: #D3DDE6;
     font-family: Arial, sans-serif;
@@ -83,14 +63,13 @@ body {
     padding: 0;
 }
 
-/* MAIN CONTAINER */
+
 .dashboard-container {
     max-width: 900px;
     margin: 120px auto;
     padding: 20px;
 }
 
-/* USER DASHBOARD TITLE */
 .dashboard-title {
     text-align: center;
     font-size: 28px;
@@ -99,8 +78,7 @@ body {
     margin-bottom: 35px;
 }
 
-/* BOX STYLE (shared) */
-.dashboard-box {
+ .dashboard-box {
     background: white;
     padding: 25px 30px;
     margin-bottom: 30px;
@@ -108,7 +86,6 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* BOX HEADINGS */
 .dashboard-box h3 {
     margin-top: 0;
     margin-bottom: 20px;
@@ -118,26 +95,30 @@ body {
     padding-bottom: 8px;
 }
 
-/* USER INFO TEXT */
-.user-info-box p {
+ .user-info-box p {
     font-size: 16px;
     color: #333;
     line-height: 1.6;
 }
 
-/* BOOKINGS SECTION */
 .booking-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.booking-item {
+ .booking-item {
     background: #f7f9fc;
     border-left: 4px solid #1f2933;
-    padding: 15px 20px;
+    padding: 18px 20px;
     margin-bottom: 15px;
-    border-radius: 8px;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-row-gap: 8px;
+    grid-column-gap: 25px;
+
     transition: 0.2s ease;
 }
 
@@ -147,20 +128,54 @@ body {
 }
 
 .booking-item p {
-    margin: 5px 0;
+    margin: 0;
     font-size: 15px;
-    color: #333;
+    color: #222;
+    font-weight: 500;
 }
 
-/* EMPTY BOOKING MESSAGE */
-.bookings-box p {
-    font-size: 16px;
-    color: #444;
+/* MOBILE FIX */
+@media (max-width: 600px) {
+    .booking-item {
+        grid-template-columns: 1fr;
+    }
+}
+
+footer {
+    background: #111;
+    color: #fff;
+    padding: 30px 0;
     text-align: center;
-    margin-top: 20px;
 }
 
-/* MOBILE RESPONSIVE */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ccc;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #888;
+}
+
 @media (max-width: 600px) {
     .dashboard-container {
         margin: 60px 15px;
@@ -174,45 +189,3 @@ body {
         padding: 20px;
     }
 }
-
-
-
-/* footer */
-
-/* footer */
-
-     /*footer which is down in the footer part of the page */
-        footer {
-            background: #111;
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: #ccc;
-        }
-        
-        .copyright {
-            font-size: 14px;
-            color: #888;
-        }

@@ -44,7 +44,7 @@ window.onload = function () {
     roomtype.onchange = calculatePrice;
 
     // Price calculator function
-    function calculatePrice() {
+    async function calculatePrice() {
 
         // If any field is empty → do nothing
         if (!checkin.value || !checkout.value || !roomtype.value) {
@@ -73,5 +73,6 @@ window.onload = function () {
             "Nights: " + nights + "<br>" +
             "Price per night: £" + pricePerNight + "<br>" +
             "Total: £" + total;
-    }
+        
+    } 
 };

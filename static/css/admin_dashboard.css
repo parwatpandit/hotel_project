@@ -32,7 +32,7 @@ header {
 .header-logo {
     height: 60px;   /* bigger */
     position: absolute;
-    left: -300px;
+    left: -100px;
     top: 50%;
     transform: translateY(-50%);
 }

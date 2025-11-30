@@ -55,11 +55,7 @@ def submit_booking():
     cursor.close() #closed the cursor
     mydb.close()
 
-    return """<h2>Booking saved successfully!</h2> 
-                <a href="/">Go to home</a>
-                <br>
-                <a href="/booking">want to book again!!!</a>"""
-
+    return render_template("booking_sucess.html", message="Booking saved successfully!", back_url="/booking", home_url="/")
 
 # ---------------- ADMIN LOGIN ---------------- #
 

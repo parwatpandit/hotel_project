@@ -1,27 +1,24 @@
 
-        /* navigation bar*/
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color:#D3DDE6 ;
-            padding: 15px 20px;
-            /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
-            z-index: 100;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-        }
-
-        .header-content {
-            display: flex;
-    align-items: center;
-    justify-content: center;
+header {
+    position: fixed;
+    top: 0;
     width: 100%;
-    position: relative;
-          
-        }
+    background-color:#D3DDE6 ;
+    padding: 15px 20px;
+     z-index: 100;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
 
-        /* website logo sytle */
-    
+    .header-content {
+        display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+position: relative;
+          
+    }
+
+     
         .header-logo {
     height: 50px;
     margin-right: 200px;
@@ -30,8 +27,7 @@
     top: 0px; 
 }
 
-        /* link  */
-        .nav-links {
+         .nav-links {
             display: flex;
             justify-content: center;
             align-items: center; 
@@ -39,69 +35,63 @@
             padding-top: 18px;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-            /* margin: 0 15px; */
-            position: relative;
-            font-size: 18px;
-        }
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+        position: relative;
+    font-size: 18px;
+}
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: black;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: width 0.3s ease-in-out;
-        }
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
+.nav-links a:hover::after {
+    width: 100%;
+}
 
 
 
 
-/* Page background */
-body {
+
+ body {
     background-color: #D3DDE6;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* Booking container */
-.booking-container {
+ .booking-container {
     max-width: 500px;
-    margin: 150px auto; /* pushes it below header */
+    margin: 150px auto;  
     padding: 35px;
     background: white;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* Title */
-.booking-container h1 {
+ .booking-container h1 {
     text-align: center;
     color: #222;
     margin-bottom: 25px;
     font-size: 24px;
 }
 
-/* Labels (your form uses plain text, so I style via form) */
-.booking-container form {
+ .booking-container form {
     font-size: 16px;
     color: #333;
     line-height: 1.6;
 }
 
-/* Inputs */
 .booking-container input,
 .booking-container select {
     width: 100%;
@@ -119,8 +109,7 @@ body {
     border-color: #1f2933;
 }
 
-/* Submit button */
-.booking-container button {
+ .booking-container button {
     width: 100%;
     padding: 13px;
     background: #1f2933;
@@ -138,8 +127,7 @@ body {
     background: rgb(10, 62, 10);
 }
 
-/* Optional: spacing below footer */
-footer {
+ footer {
     margin-top: 60px;
 }
 
@@ -147,38 +135,38 @@ footer {
 
 /* footer */
 
-     /*footer which is down in the footer part of the page */
-        footer {
-            background: #111;
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
-        }
+/*footer which is down in the footer part of the page */
+footer {
+    background: #111;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
         
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
         
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-        }
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
         
-        .footer-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
         
-        .footer-links a:hover {
-            color: #ccc;
-        }
+.footer-links a:hover {
+    color: #ccc;
+}
         
-        .copyright {
-            font-size: 14px;
-            color: #888;
-        }
+.copyright {
+    font-size: 14px;
+    color: #888;
+}

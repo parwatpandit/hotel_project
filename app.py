@@ -5,13 +5,27 @@ app = Flask(__name__)
 app.secret_key = "supersecretkey123"
 
 import mysql.connector
+# for now
+# def get_db():
+#     return mysql.connector.connect(
+#         host="127.0.0.1",
+#         user="root",
+#         password="Maninblack90",
+#         database="hotel_security"
+#     )
+
+import mysql.connector
+import os
+
 def get_db():
     return mysql.connector.connect(
-        host="127.0.0.1",
-        user="root",
-        password="Maninblack90",
-        database="hotel_security"
+        host=os.environ.get("MYSQLHOST"),
+        user=os.environ.get("MYSQLUSER"),
+        password=os.environ.get("MYSQLPASSWORD"),
+        database=os.environ.get("MYSQLDATABASE"),
+        port=os.environ.get("MYSQLPORT")
     )
+
 
 
 @app.route("/")#if methods is not mention the flask will automatically use GET method

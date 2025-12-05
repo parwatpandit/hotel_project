@@ -1,0 +1,216 @@
+<html>
+    
+
+<!-- header -->
+<head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <title>
+        </title>
+</head>
+
+
+<!-- whole body -->
+    <body>    
+        <div id="main-content">
+       
+        
+        <!-- header of body -->
+            <header>
+            <div class="header-content">
+                <!-- logo -->
+                <a href="#top"><img src="{{ url_for('static', filename='image/logo.png') }}" alt="Website Logo" class="header-logo"></a> 
+                
+               
+                <!-- nevigation bar -->
+                <div class="nav-links">
+                    <a href="/booking">Booking</a>
+                    <a href="/admin_login">Admin Page</a>
+                    <a href="/signup">Signup</a>
+                    <a href="/login">Login</a>
+                </div>
+                
+            </div>
+        </header>
+
+
+
+
+        <!-- main contain of the page except header and footer -->
+        <main>
+            
+            <!-- first slide show of image  -->
+            <!-- forst container-->
+            <div class="first-container">
+                <div class="first-slideshow">
+                    <div class="first-slide">
+                        <div class="first-overlayout"></div>
+                        <div class="first-content">
+                            <h1>Delux Room</h1>
+                            <p>A stylish modern room where comfort meets convenience, offering a cozy bed, elegant décor, and everything you need for a relaxing stay.
+                                <br>
+                                <br>
+                                <b>PRICE: £100 /NIGHT</b>
+                            </p>
+                            
+                        </div>
+                    </div>
+                    <div class="first-slide">
+                        <div class="first-overlayout"></div>
+                        <div class="first-content">
+                            <h1>Ececutive Suite</h1>
+                            <p>A spacious suite designed for extra comfort, featuring a separate living area, premium furnishings, and a calm environment perfect for work or rest.
+                                <br>
+                                <br>
+                                <b>PRICE: £150 /NIGHT</b>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="first-slide">
+                        <div class="first-overlayout"></div>
+                        <div class="first-content">
+                            <h1>Family Room</h1>
+                            <p>A warm and welcoming room built for families, complete with multiple beds, extra space, and amenities that make every stay feel like home.
+                                <br>
+                                <br>
+                                <b>PRICE: £200 /NIGHT</b>
+                            </p>
+                            
+                        </div>
+                    </div>
+                    <div class="first-slide">
+                        <div class="first-overlayout"></div>
+                        <div class="first-content">
+                            <h1>Twin Room</h1>
+                            <p>A practical and comfortable room with two single beds, ideal for friends or colleagues traveling together while enjoying privacy and ease.
+                                <br>
+                                <br>
+                                <b>PRICE: £150 /NIGHT</b>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+
+                
+                <!-- small navigation button for container first < > -->
+                <div class="first-slider-nav">
+                    <button class="slider-nav-button" id="firstPrevBtn">❮</button>
+                    <button class="slider-nav-button" id="firstNextBtn">❯</button>
+                </div>
+
+
+
+
+
+                <!--dots container . . . . in the first container wher user can press and go to next image -->
+                <div class="first-dots-container" id="firstDotsContainer"></div>
+            </div>
+
+
+
+
+<!-- secont 3 small continers of images -->
+            <!-- 3 Small containers -->
+            <div class="container-3small">
+                <div class="small-categories">
+
+
+                    <!-- dining Category -->
+                    <div class="small-box">
+                        <img src="{{ url_for('static', filename='image/dining.jpg') }}"  class="small-image">
+                        <!-- <img src="image/dining.jpg" class="small-image"> -->
+                        <div class="small-label">DINING</div>
+                    </div>
+                    
+                    <!--services Category -->
+                    <div class="small-box">
+                        <img src="{{ url_for('static', filename='image/services.jpg') }}"  class="small-image">
+                        <div class="small-label">SERVICES</div>
+                    </div>
+                    
+                    <!-- room types Category -->
+                    <div class="small-box">
+                        <img src="{{ url_for('static', filename='image/roomtype.jpg') }}"  class="small-image">
+                        <div class="small-label">ROOM TYPES</div>
+                    </div>
+                </div>
+            </div>
+
+         
+         <!-- video container also known as secont continer -->
+            <!-- second container 3 video of rooms like famil,delux and others -->
+            <div class="second-slider-container">
+                <div class="second-slider">
+                    <div class="second-slide">
+                        <!-- vodeo 1 -->
+                        <video autoplay muted loop playsinline>
+                            <source src="{{url_for('static', filename='video/delux.mp4')}}" type="video/mp4">
+                            Your browser does not support video.
+                        </video>
+                        <button class="image-name">Deluxe Room</button>
+                        <div class="image-description">A cozy escape offering modern comfort, peaceful ambience, and everything you need to unwind.</div>
+                    </div>
+                    <div class="second-slide">
+                        <!-- video 2 -->
+                        <video autoplay muted loop playsinline>
+                            
+                            <source src="{{url_for('static', filename='video/executive.mp4')}}" type="video/mp4">
+                            Your browser does not support video.
+                        </video>
+                        <button class="image-name">Executive Suite</button>
+                        <div class="image-description">A spacious, elegant retreat designed for extra comfort, privacy, and a touch of luxury.</div>
+                    </div>
+                    <div class="second-slide">
+                        <!-- video 3 -->
+                        <video autoplay muted loop playsinline>
+                            
+                            <source src="{{url_for('static', filename='video/family.mp4')}}" type="video/mp4">
+                            Your browser doens support video.
+                        </video>
+                        <button class="image-name">Family Room</button>
+                        <div class="image-description">A warm, welcoming space with plenty of room for everyone to relax and enjoy their stay.</div>
+                    </div>
+                </div>
+
+
+
+                <!-- video sliver button to change the video -->
+                <div class="second-slider-nav">
+                    <button id="secondPrevBtn">❮</button>
+                    <button id="secondNextBtn">❯</button>
+                </div>
+            </div>
+
+
+
+
+        </main>
+        
+
+
+
+
+<!-- footer are for about us an d contact us -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="/aboutus">About Us</a>
+                    <a href="/contactus">Contact Us</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2023 The Airman Hotel.
+                </div>
+            </div>
+        </footer>
+
+
+</div>
+
+<!-- js -->
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
+

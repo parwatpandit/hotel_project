@@ -30,7 +30,7 @@ def get_db():
 
 @app.route("/")#if methods is not mention the flask will automatically use GET method
 def home():
-    return render_template("home.html")
+    return render_template("index.html")
 
 
 @app.route("/booking")

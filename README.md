@@ -1,7 +1,7 @@
 ## Live Hotel Management System
-(Add your deployment link here once hosted)
+https://hotel-project-0cdj.onrender.com
 
-![Hotel System Preview](static/image/preview.jpg)
+![Hotel System Preview](image path left to put)
 
 # The Airman Hotel – Hotel Management System
 
